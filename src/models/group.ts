@@ -4,66 +4,66 @@ import { Schema } from "mongoose";
 import { mongoosePagination } from "ts-mongoose-pagination";
 
 const Group = new mongoose.Schema(
-  {
-    name: {
-      type: String,
-      index: true
-    },
-    admin: {
-      type: Boolean,
-      default: false
-    },
-    createdBy: {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
-      unique: false,
-      autopopulate: true
-    },
-    permissions: {
-      _id: false,
-      user: {
-        create: {
-          type: Boolean,
-          default: false
+    {
+        name: {
+            type: String,
+            index: true
         },
-        read: {
-          type: Boolean,
-          default: false
+        admin: {
+            type: Boolean,
+            default: false
         },
-        update: {
-          type: Boolean,
-          default: false
+        createdBy: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            unique: false,
+            autopopulate: true
         },
-        delete: {
-          type: Boolean,
-          default: false
+        permissions: {
+            _id: false,
+            user: {
+                create: {
+                    type: Boolean,
+                    default: false
+                },
+                read: {
+                    type: Boolean,
+                    default: false
+                },
+                update: {
+                    type: Boolean,
+                    default: false
+                },
+                delete: {
+                    type: Boolean,
+                    default: false
+                }
+            },
+            group: {
+                create: {
+                    type: Boolean,
+                    default: false
+                },
+                read: {
+                    type: Boolean,
+                    default: false
+                },
+                update: {
+                    type: Boolean,
+                    default: false
+                },
+                assign: {
+                    type: Boolean,
+                    default: false
+                },
+                delete: {
+                    type: Boolean,
+                    default: false
+                }
+            }
         }
-      },
-      group: {
-        create: {
-          type: Boolean,
-          default: false
-        },
-        read: {
-          type: Boolean,
-          default: false
-        },
-        update: {
-          type: Boolean,
-          default: false
-        },
-        assign: {
-          type: Boolean,
-          default: false
-        },
-        delete: {
-          type: Boolean,
-          default: false
-        }
-      }
-    }
-  },
-  { timestamps: true }
+    },
+    { timestamps: true }
 );
 
 Group.plugin(mongoosePagination);

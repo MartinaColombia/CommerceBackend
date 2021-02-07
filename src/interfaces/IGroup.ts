@@ -4,13 +4,13 @@ import { IModel } from "./IModel";
 import { IUser } from "./IUser";
 
 export interface IGroup extends IModel {
-  name: string;
-  createdBy: IUser;
-  admin: boolean;
-  permissions: IPermissions;
+    name: string;
+    createdBy: IUser;
+    admin: boolean;
+    permissions: IPermissions;
 }
 
 export interface IPermissions {
-  user: IUserPermissions;
-  group: IGroupPermissions;
+    user: IUserPermissions;
+    group: IGroupPermissions;
 }

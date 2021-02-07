@@ -20,8 +20,8 @@ export default async ({ expressApp }) => {
     const { agenda } = await dependencyInjectorLoader({
         mongoConnection,
         models: [
-          userModel,
-          groupModel
+            userModel,
+            groupModel
         ],
     });
     Logger.info('Dependency injector loaded');
