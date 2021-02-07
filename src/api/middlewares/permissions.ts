@@ -1,6 +1,6 @@
 import { Container } from 'typedi';
 import { Logger } from "winston";
-import { IGroup } from "../../interfaces/IGroup";
+import { IGroup } from "../../interfaces/user/IGroup";
 
 /**
  * Attach user to req.user

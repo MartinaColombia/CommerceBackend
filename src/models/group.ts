@@ -1,7 +1,26 @@
-import { IGroup } from "../interfaces/IGroup";
+import { IGroup } from "../interfaces/user/IGroup";
 import * as mongoose from "mongoose";
 import { Schema } from "mongoose";
 import { mongoosePagination } from "ts-mongoose-pagination";
+
+const CRUDOperatons = {
+    create: {
+        type: Boolean,
+        default: false
+    },
+    read: {
+        type: Boolean,
+        default: false
+    },
+    update: {
+        type: Boolean,
+        default: false
+    },
+    delete: {
+        type: Boolean,
+        default: false
+    }
+};
 
 const Group = new mongoose.Schema(
     {
@@ -21,42 +40,10 @@ const Group = new mongoose.Schema(
         },
         permissions: {
             _id: false,
-            user: {
-                create: {
-                    type: Boolean,
-                    default: false
-                },
-                read: {
-                    type: Boolean,
-                    default: false
-                },
-                update: {
-                    type: Boolean,
-                    default: false
-                },
-                delete: {
-                    type: Boolean,
-                    default: false
-                }
-            },
+            user: CRUDOperatons,
             group: {
-                create: {
-                    type: Boolean,
-                    default: false
-                },
-                read: {
-                    type: Boolean,
-                    default: false
-                },
-                update: {
-                    type: Boolean,
-                    default: false
-                },
+                ...CRUDOperatons,
                 assign: {
-                    type: Boolean,
-                    default: false
-                },
-                delete: {
                     type: Boolean,
                     default: false
                 }

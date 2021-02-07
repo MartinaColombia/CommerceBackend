@@ -1,6 +1,6 @@
 import { Inject, Service } from "typedi";
 import argon2 from "argon2";
-import { IUser, IUserGeneration } from "../interfaces/IUser";
+import { IUser, IUserGeneration } from "../interfaces/user/IUser";
 import { IPaginateResult } from "mongoose";
 import { randomBytes } from "crypto";
 import { Logger } from "winston";

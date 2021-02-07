@@ -2,7 +2,7 @@ import { Router, Request, Response, NextFunction } from "express";
 import { Container } from "typedi";
 import UserService from "../../services/userService";
 import middlewares from '../middlewares';
-import { IUser, IUserGeneration } from "../../interfaces/IUser";
+import { IUser, IUserGeneration } from "../../interfaces/user/IUser";
 import { IPaginateResult } from "mongoose";
 import { celebrate, Joi } from "celebrate";
 const route = Router();

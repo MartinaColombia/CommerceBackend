@@ -1,7 +1,5 @@
-export interface IGroupPermissions {
-    create: boolean;
-    read: boolean;
-    update: boolean;
+import {IBasePermissions} from "../user/IGroup";
+
+export interface IGroupPermissions extends IBasePermissions{
     assign: boolean;
-    delete: boolean;
 }

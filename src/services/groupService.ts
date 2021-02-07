@@ -1,6 +1,6 @@
 import { Service, Inject } from 'typedi';
-import { IUser } from '../interfaces/IUser';
-import { IGroup } from "../interfaces/IGroup";
+import { IUser } from '../interfaces/user/IUser';
+import { IGroup } from "../interfaces/user/IGroup";
 import { IPaginateResult } from "mongoose";
 import { Logger } from "winston";
 

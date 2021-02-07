@@ -1,8 +1,8 @@
 import { Container, Service } from "typedi";
 import UserService from "../../src/services/userService";
 import GroupService from "../../src/services/groupService";
-import { IUser } from "../../src/interfaces/IUser";
-import { IGroup } from "../../src/interfaces/IGroup";
+import { IUser } from "../../src/interfaces/user/IUser";
+import { IGroup } from "../../src/interfaces/user/IGroup";
 
 @Service()
 export default class DemoLoader {

@@ -1,11 +1,11 @@
 import { Router, Request, Response, NextFunction } from "express";
 import { Container } from "typedi";
 import GroupService from "../../services/groupService";
-import { IGroup } from "../../interfaces/IGroup";
+import { IGroup } from "../../interfaces/user/IGroup";
 import middlewares from "../middlewares";
 import { celebrate, Joi } from "celebrate";
 import { IPaginateResult } from "mongoose";
-import { IUser } from "../../interfaces/IUser";
+import { IUser } from "../../interfaces/user/IUser";
 import UserService from "../../services/userService";
 const route = Router();
 

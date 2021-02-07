@@ -2,7 +2,7 @@ import { Service, Inject } from 'typedi';
 import jwt from 'jsonwebtoken';
 import config from '../config';
 import argon2 from 'argon2';
-import { IUser } from '../interfaces/IUser';
+import { IUser } from '../interfaces/user/IUser';
 
 @Service()
 export default class AuthService {
