@@ -4,26 +4,33 @@ import mongooseLoader from './mongoose';
 import jobsLoader from './jobs';
 import Logger from './logger';
 
+function model(name: string, route: string) : { name: string; model: any } {
+    return {
+        name,
+        model: require(route).default
+    };
+}
+
 export default async ({ expressApp }) => {
     const mongoConnection = await mongooseLoader();
     Logger.info('MongoDB successfully connected');
 
-    const userModel = {
-        name: 'userModel',
-        model: require('../models/user').default
-    };
-    const groupModel = {
-        name: 'groupModel',
-        model: require('../models/group').default
-    };
-
     const { agenda } = await dependencyInjectorLoader({
         mongoConnection,
         models: [
-            userModel,
-            groupModel
+
+            model('attributeModel', '../models/attribute/attribute'),
+            model('attributeCategoryModel', '../models/attribute/attributeCategory'),
+
+            model('productModel', '../models/product/product'),
+            model('productCategoryModel', '../models/product/productCategory'),
+
+            model('imageModel', '../models/image'),
+            model('userModel', '../models/user'),
+            model('groupModel', '../models/group')
         ],
     });
+
     Logger.info('Dependency injector loaded');
 
     await jobsLoader({ agenda });

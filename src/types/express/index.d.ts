@@ -1,6 +1,7 @@
 import { Document, PaginateModel } from 'mongoose';
 import {IAttribute} from "../../interfaces/attribute/IAttribute";
 import {IAttributeCategory} from "../../interfaces/attribute/IAttributeCategory";
+import {IImage} from "../../interfaces/IImage";
 import { IUser } from '../../interfaces/user/IUser';
 import { IGroup } from "../../interfaces/user/IGroup";
 import {IProduct} from "../../interfaces/product/IProduct";
@@ -21,8 +22,9 @@ declare global {
         export type Product = PaginateModel<IProduct & Document>;
         export type ProductCategory = PaginateModel<IProductCategory & Document>;
 
-        export type User = PaginateModel<IUser & Document>;
+        export type Image = PaginateModel<IImage & Document>;
         export type Group = PaginateModel<IGroup & Document>;
+        export type User = PaginateModel<IUser & Document>;
 
     }
 

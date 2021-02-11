@@ -4,7 +4,8 @@ import {IProductCategory} from "./IProductCategory";
 
 export interface IProduct extends IModel {
     name: string;
-    category: IProductCategory | string;
+    category: IProductCategory[] | string[];
+    price: number;
     images: IProductImage[];
     description: string;
     variations: IProductVariation[];

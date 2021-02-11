@@ -3,7 +3,7 @@ import * as mongoose from "mongoose";
 import { Schema } from "mongoose";
 import { mongoosePagination } from "ts-mongoose-pagination";
 
-const CRUDOperatons = {
+const CRUDOperations = {
     create: {
         type: Boolean,
         default: false
@@ -35,14 +35,13 @@ const Group = new mongoose.Schema(
         createdBy: {
             type: Schema.Types.ObjectId,
             ref: 'User',
-            unique: false,
-            autopopulate: true
+            unique: false
         },
         permissions: {
             _id: false,
-            user: CRUDOperatons,
+            user: CRUDOperations,
             group: {
-                ...CRUDOperatons,
+                ...CRUDOperations,
                 assign: {
                     type: Boolean,
                     default: false
@@ -54,5 +53,4 @@ const Group = new mongoose.Schema(
 );
 
 Group.plugin(mongoosePagination);
-Group.plugin(require('mongoose-autopopulate'));
 export default mongoose.model<IGroup & mongoose.Document>('Group', Group);
